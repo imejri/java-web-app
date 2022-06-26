@@ -15,7 +15,7 @@
 
         		parameters {
         			string(name: 'SOURCES_URL', defaultValue: 'https://github.com/imejri/java-web-app.git', description: 'Github repository source of the application.')
-        			choice(name: 'BRANCH_NAME', choices: ['artifactory','main'], description: 'The name of the branch to use'
+        			choice(name: 'BRANCH_NAME', choices: ['artifactory','main'], description: 'The name of the branch to use')
         		}
 
         		stages {
