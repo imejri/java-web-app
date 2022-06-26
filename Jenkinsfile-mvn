@@ -18,19 +18,6 @@
 
         		stages {
 
-        			 /* stage('checkout') {
-
-        				steps {
-
-        					checkout([$class: 'GitSCM', 
-                            branches: [[name: "*/${env.BRANCH_NAME}"]], 
-                            userRemoteConfigs:[[credentialsId:  '', url: "${env.SOURCES_URL}"]]
-                 
-                       ])
-        				} // steps
-
-        			} // stage */
-
 	        		stage ('Build maven') {
 
 	        			steps {
