@@ -1,0 +1,43 @@
+// Pipeline to build a Maven project
+
+
+        pipeline {
+
+                agent any
+        
+        		options
+        		{
+        			timeout(time: 30, unit: 'MINUTES')
+        			buildDiscarder(logRotator(numToKeepStr: '5'))
+        		}
+
+        		parameters {
+        			string(name: 'SOURCES_URL', defaultValue: 'https://github.com/imejri/java-web-app.git', description: 'Github repository source of the application.')
+        			string(name: 'BRANCH_NAME', defaultValue: 'artifactory', description: 'The name of the branch to use')
+        		}
+
+        		stages {
+
+	        		stage ('Build maven') {
+
+	        			steps {
+
+	        				script {
+
+	        					sh 'mvn clean package'
+	        				} // script
+	        			} //steps
+
+	        			post
+	        				{
+						
+						success {
+	        					echo "Now archiving artifact"
+	        					archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+							} //success
+	        				}
+	        		} //stage      				
+
+
+        		} // stages
+        } //pipeline
