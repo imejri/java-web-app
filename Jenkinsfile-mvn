@@ -23,8 +23,8 @@
         				steps {
 
         					checkout([$class: 'GitSCM', 
-                            branches: [[name: "*/${params.BRANCH_NAME}"]], 
-                            userRemoteConfigs:[[credentialsId:  '', url: "${params.SOURCES_URL}"]]
+                            branches: [[name: "*/${env.BRANCH_NAME}"]], 
+                            userRemoteConfigs:[[credentialsId:  '', url: "${env.SOURCES_URL}"]]
                  
                        ])
         				} // steps
