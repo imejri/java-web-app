@@ -18,6 +18,20 @@
 
         		stages {
 
+<<<<<<< HEAD
+=======
+					stage ('Unit Test') {
+
+	        			steps {
+
+	        				script {
+								sh echo "**************Execute unit Tests*****************"
+								sh echo "*************************************************"
+	        					sh 'mvn test'
+	        				} // script
+	        			} //steps
+
+>>>>>>> main
 	        		stage ('Build maven') {
 
 	        			steps {
