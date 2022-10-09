@@ -38,6 +38,7 @@
 	        					sh 'mvn test'
 	        				} // script
 	        			} //steps
+					} //stage
 
 	        		stage ('Build maven') {
 
@@ -56,7 +57,7 @@
 	        					echo "Now archiving artifact"
 	        					archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 							} //success
-	        				}
+	        				} //post
 	        		} //stage      				
 
 
