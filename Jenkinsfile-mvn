@@ -1,5 +1,5 @@
 // Pipeline to build a Maven project
-
+def MAVEN_HOME="/opt/apache-maven-3.8.6/bin"
 
         pipeline {
 
@@ -24,7 +24,7 @@
 
 	        				script {
 
-	        					sh 'mvn clean package'
+	        					sh "${MAVEN_HOME}/mvn clean package"
 	        				} // script
 	        			} //steps
 
