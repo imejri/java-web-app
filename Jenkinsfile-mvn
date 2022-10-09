@@ -35,8 +35,10 @@ def MAVEN_HOME="/opt/apache-maven-3.8.6/bin"
 	        			steps {
 
 	        				script {
+								echo "*************************************************"
 								echo "**************Execute unit Tests*****************"
 								echo "*************************************************"
+								
 	        					sh "${MAVEN_HOME}/mvn test"
 	        				} // script
 	        			} //steps
