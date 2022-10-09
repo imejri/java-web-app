@@ -18,6 +18,16 @@
 
         		stages {
 
+					stage ('Checkout') {
+						steps {
+
+							checkout([$class: 'GitSCM', 
+                            branches: [[name: "*/${env.BRANCH_NAME}"]], 
+                            userRemoteConfigs:[[credentialsId:  'gitlab', url: "${env.SOURCES_URL}"]]
+                    ])
+						} //steps
+					} //stage
+
 					stage ('Unit Test') {
 
 	        			steps {
