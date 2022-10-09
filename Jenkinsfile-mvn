@@ -1,10 +1,12 @@
 // Pipeline to build a Maven project
 
+def MAVEN_HOME='/opt/apache-maven-3.8.6/bin'
 
         pipeline {
 
                 agent any
-        
+
+				
         		options
         		{
         			timeout(time: 30, unit: 'MINUTES')
@@ -35,7 +37,7 @@
 	        				script {
 								echo "**************Execute unit Tests*****************"
 								echo "*************************************************"
-	        					sh 'mvn test'
+	        					sh '${MAVEN_HOME}/mvn test'
 	        				} // script
 	        			} //steps
 					} //stage
@@ -46,7 +48,7 @@
 
 	        				script {
 
-	        					sh 'mvn clean package'
+	        					sh '${MAVEN_HOME}/mvn clean package'
 	        				} // script
 	        			} //steps
 
