@@ -12,9 +12,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        script {
         sh '"${MAVEN_HOME}"/mvn clean install -X'
-      }
-    }
+        } //script
+      } // step
+    } // stage
     stage('Upload to Artifactory') {
       agent {
         docker {
