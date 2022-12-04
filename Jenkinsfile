@@ -8,13 +8,13 @@ pipeline {
   environment {
     CI = true
     ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
+    MAVEN_HOME = '/opt/apache-maven-3.8.6/bin'
   }
   stages {
     stage('Build') {
       steps {
         script {
-          echo $MAVEN_HOME
-        sh '${MAVEN_HOME}/mvn clean install -X'
+        sh '${env.MAVEN_HOME}/mvn clean install -X'
         } //script
       } // step
     } // stage
