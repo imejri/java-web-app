@@ -13,7 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          echo ${env.MAVEN_HOME}
+          echo "${env.MAVEN_HOME}"
         sh '''
           "${env.MAVEN_HOME}"/mvn clean install -X
           '''
