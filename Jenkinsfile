@@ -1,4 +1,3 @@
-def MAVEN_HOME="/opt/apache-maven-3.8.6/bin"
 
 pipeline {
   agent any
@@ -14,7 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-        sh '\${env.MAVEN_HOME}"/mvn clean install -X'
+        sh '${env.MAVEN_HOME}"/mvn clean install -X'
         } //script
       } // step
     } // stage
