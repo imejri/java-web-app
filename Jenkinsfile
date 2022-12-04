@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "${MAVEN_HOME}"/mvn clean install -X'
+        sh '"${MAVEN_HOME}"/mvn clean install -X'
       }
     }
     stage('Upload to Artifactory') {
