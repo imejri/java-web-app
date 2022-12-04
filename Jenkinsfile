@@ -15,7 +15,7 @@ pipeline {
         script {
           echo "${env.MAVEN_HOME}"
         sh '''
-          "${env.MAVEN_HOME}/mvn clean install -X"
+          '"${env.MAVEN_HOME}"/mvn clean install -X'
           '''
         } //script
       } // step
