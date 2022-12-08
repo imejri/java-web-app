@@ -28,7 +28,7 @@ pipeline {
       
       steps {
         jf 'rt ping'
-        jf 'rt u **/target/*.war'
+        jf 'rt u **/target/*.war java-web-app/'
         
       }
     }
