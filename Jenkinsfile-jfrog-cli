@@ -28,7 +28,7 @@ pipeline {
       
       steps {
         jf 'rt ping'
-        jf 'rt u target/demo-0.0.1-SNAPSHOT.jar java-web-app/ --props "project=maven"'
+        jf 'rt u target/demo-0.0.1-SNAPSHOT.jar java-web-app/ --props="project=maven"'
         
       }
     }
