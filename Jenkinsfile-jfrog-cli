@@ -27,9 +27,9 @@ pipeline {
     stage('Upload to Artifactory') {
       
       steps {
-        jf '-v'
         jf 'rt ping'
-        // target/*.jar java-web-app/'
+        jf 'rt u **/target/*.war'
+        
       }
     }
   }
